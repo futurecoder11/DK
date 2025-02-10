@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="./OIG1.jpeg" sizes="100x100"> <!-- Favicon for the webpage -->
+    <title>My Projects</title>
+    <style>
+        @keyframes changeColor {
+            25% {
+                color: rgb(219, 52, 52);
+            }
+
+            50% {
+                color: rgb(48, 185, 48);
+            }
+
+            100% {
+                color: rgb(52, 52, 145);
+            }
+        }
+
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://images.pexels.com/photos/1198839/pexels-photo-1198839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: background-color 0.3s ease;
+
+        }
+
+        /* Dark mode styling for the body */
+        body.dark-mode {
+            background-color: #333;
+        }
+
+        /* Heading 1 styling */
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-top: 20px;
+            /* Applying animation to change color */
+            animation: changeColor 5s infinite alternate, glow 2s infinite alternate;
+            color: #fff;
+            /* Default color */
+        }
+
+        /* Main content wrapper */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Styling for each project card */
+        .project {
+            
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            width: 300px;
+            height: 400px;
+            /* Fixed height for project cards */
+            position: relative;
+        }
+
+        /* Dark mode styling for project cards */
+        body.dark-mode .project {
+            background-color: #444;
+            color: #fff;
+        }
+
+        /* Hover effect on project cards */
+        .project:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling for project images */
+        .project img {
+            display: block;
+            width: 100%;
+            height: 80%;
+            /* Adjusted height for images within project cards */
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for project images */
+        .project:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Styling for project descriptions */
+        .project-description {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for paragraphs */
+        p {
+            margin: 0;
+            font-size: 30px;
+            color: #0a0c01;
+        }
+
+        /* Search container styling */
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+            color: gray;
+        }
+
+        /* Styling for search input */
+        input[type="text"] {
+            width: 50%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        /* Focus state for search input */
+        input[type="text"]:focus {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Placeholder text styling */
+        ::placeholder {
+            color: #999;
+        }
+
+        /* Styling for theme switch wrapper */
+        .theme-switch-wrapper {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+        }
+
+        /* Styling for theme switch checkbox */
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+
+        /* Hidden checkbox input */
+        .theme-switch input {
+            display: none;
+        }
+
+        /* Slider styling for theme switch */
+        .slider {
+            background-color: #ccc;
+            border-radius: 34px;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+        }
+
+        /* Slider knob styling */
+        .slider:before {
+            background-color: white;
+            border-radius: 50%;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+        }
+
+        /* Checked state for slider */
+        input:checked+.slider {
+            background-color: #666;
+        }
+
+        /* Checked state styling for slider knob */
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Rounded slider styling */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        /* Rounded slider knob styling */
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* Dark mode styling for project cards */
+        body.dark-mode .project {
+            background-color: #333;
+        }
+
+        /* Dark mode styling for paragraphs */
+        body.dark-mode p {
+            color: #fff;
+        }
+
+        /* Dark mode styling for search input */
+        body.dark-mode input[type="text"] {
+            background-color: #444;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Dark mode focus state for search input */
+        body.dark-mode input[type="text"]:focus {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Dark mode styling for placeholder text */
+        body.dark-mode ::placeholder {
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+   <h1>Hi Kalyani.......</h1>
+   
+    <main>
+        <!-- Project cards section -->
+
+        <div class="project">
+            <a href="heart.html"><img
+                    src="https://images.pexels.com/photos/4197491/pexels-photo-4197491.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Top 3 freedom fighters of India "></a> <!-- Image link for the project -->
+            <div class="project-description">
+                <p>Heart</p> <!-- Project description -->
+            </div>
+        </div>
+        <div class="project">
+            <a href="yes_no.html"><img
+                    src="https://images.pexels.com/photos/2057692/pexels-photo-2057692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="India Flag"></a> <!-- Image link for the project -->
+            <div class="project-description">
+                <p>Yes_NO..?</p> <!-- Project description -->
+            </div>
+        </div>
+        <div class="project">
+            <a href="message.html"><img
+                    src="https://images.pexels.com/photos/4226726/pexels-photo-4226726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Registration page"></a> <!-- Image link for the project -->
+            <div class="project-description">
+                <p>Message</p> <!-- Project description -->
+            </div>
+        </div>
+        
+        
+       
+       
+    
+    </main>
+
+    <!-- JavaScript for theme switch functionality -->
+    <script>
+
+        // JavaScript for search functionality
+        const projects = document.querySelectorAll('.project');
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', function () {
+            const inputValue = this.value.trim().toLowerCase();
+
+            projects.forEach(project => {
+                const title = project.querySelector('p').textContent.toLowerCase();
+                if (title.includes(inputValue)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        });
+
+        // JavaScript for theme switcher
+        const checkbox = document.getElementById('checkbox');
+        const body = document.body;
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
